@@ -1,0 +1,222 @@
+<div class="container">
+    <h2 style="text-align: center;" *ngIf="isMode">New Product</h2>
+    <h2 style="text-align: center;" *ngIf="!isMode">Edit Product</h2>
+    <hr>
+    <div class="row">
+        <div class="col-sm-7">
+            <form #f="ngForm" (ngSubmit)="save(f.value)">
+                <input type="hidden" [(ngModel)]="aaUser.email" #user name="user" id="user" >
+
+                <div class="form-group">
+                    <label for="title">Title</label>
+                    <input #title="ngModel" [(ngModel)]="product.title" name="title" id="title"
+                     type="text" class="form-control" required minlength="10" maxlength="50">
+                </div>
+                <div *ngIf="title.invalid && title.touched" class="alert alert-danger">
+                    <p *ngIf="title.errors?.required">    Title Is Required</p>
+                    <p *ngIf="title.errors?.minlength">    min Length 10 Your Enter {{title.errors.minlength.actualLength}}</p>
+                </div>
+              
+                <div class="form-group">
+                    <label for="price">Price</label>
+                    <div class="input-group">
+                        <span class="input-group-text">$</span>
+                        <input #price="ngModel" [(ngModel)]="product.price" name="price" id="price"
+                         type="number" class="form-control" required  pattern="^[1-9]+[0-9]*" >
+                    </div>
+                </div>
+                <div *ngIf="price.invalid && price.touched" class="alert alert-danger">
+                    <p *ngIf="price.errors?.required">  Price Is Required</p>
+                    <p *ngIf="price.errors?.pattern">  Enter Positive number Or greater than 0 </p>
+                </div>
+             
+                <div class="form-group">
+                    <label for="category">Category</label>
+                    <select  #category="ngModel"  [(ngModel)]="product.category" name="category" id="category" 
+                    class="form-control" required>
+                        <option *ngFor="let categ of categories$ | async " [value]="categ.key">
+                            {{categ.payload.val().name}} </option>
+                    </select>
+                </div>
+                <div *ngIf="category.invalid && category.touched" class="alert alert-danger">
+                    <p *ngIf="category.errors?.required">  Category Is Required</p>
+                </div>
+
+                <div class="form-group">
+                    <label for="category">Rate Product</label>
+                    <select  #rate="ngModel" [(ngModel)]="product.rate" name="rate" id="rate" class="form-control" required>
+                        <option *ngFor="let rate of rate$ | async " [value]="rate.key">
+                            {{rate.payload.val().name}} </option>
+                    </select> 
+                </div>
+                <div *ngIf="rate.invalid && rate.touched" class="alert alert-danger">
+                    <p *ngIf="rate.errors?.required">  Rate Is Required</p>
+                </div>
+
+                <div class="form-group">
+                    <label for="Featured">Featured</label>
+                    <select  #featured="ngModel" [(ngModel)]="product.featured" name="featured" id="featured"
+                     class="form-control" required>
+                        <option [value]="true">True</option>
+                        <option [value]="false">False</option>
+                    </select> 
+                </div>
+                <div *ngIf="featured.invalid && featured.touched" class="alert alert-danger">
+                    <p *ngIf="featured.errors?.required"> Is Featured Is Required</p>
+                </div>
+                
+
+                <div class="form-group">
+                    <label for="imageUrl">Image Url</label>
+                    <input  #imageUrl="ngModel" [(ngModel)]="product.imageUrl" name="imageUrl" id="imageUrl"  type="url"
+                     class="form-control" required url>
+                     <div *ngIf="imageUrl.invalid && imageUrl.touched" class="alert alert-danger" style="margin-top: 15px;">
+                        <p *ngIf="imageUrl.errors?.required"> Image Url Is Required</p>
+                        <p *ngIf="imageUrl.errors?.url"> Enter Format of Url</p>
+                    </div>
+
+                    <input *ngIf="!product.imageUrl1;else ng1" #imageUrl1="ngModel" ngModel name="imageUrl1" id="imageUrl1"  
+                    type="url" class="form-control" placeholder="Option image Url" style="margin-top: 13px;">
+                    <ng-template #ng1>
+                        <input  #imageUrl1 [(ngModel)]="product.imageUrl1" name="imageUrl1" id="imageUrl1"  
+                        type="url" class="form-control" placeholder="Option image Url" style="margin-top: 13px;">
+                    </ng-template>
+                        
+                    <input *ngIf="!product.imageUrl2;else ng2" #imageUrl2="ngModel" ngModel name="imageUrl2" id="imageUrl2"  
+                    type="url" class="form-control" placeholder="Option image Url" style="margin-top: 13px;">
+                    <ng-template #ng2>
+                        <input  #imageUrl2 [(ngModel)]="product.imageUrl2" name="imageUrl2" id="imageUrl2"  
+                        type="url" class="form-control" placeholder="Option image Url" style="margin-top: 13px;">
+                    </ng-template>
+                        
+                    <input *ngIf="!product.imageUrl3;else ng3" #imageUrl1="ngModel" ngModel name="imageUrl3" id="imageUrl3"  
+                    type="url" class="form-control" placeholder="Option image Url" style="margin-top: 13px;">
+                    <ng-template #ng3>
+                        <input  #imageUrl3 [(ngModel)]="product.imageUrl3" name="imageUrl3" id="imageUrl3"  
+                        type="url" class="form-control" placeholder="Option image Url" style="margin-top: 13px;" >
+                    </ng-template>
+              
+                </div>
+       
+
+                <div class="form-group">
+                    <label for="desc">Description</label>
+                    <textarea  #desc="ngModel" [(ngModel)]="product.desc" name="desc" id="desc" rows="3"  
+                         type="text" class="form-control" required minlength="50" maxlength="300">
+                    </textarea>
+                </div>
+                <div *ngIf="desc.invalid && desc.touched" class="alert alert-danger" style="margin-top: 15px;">
+                    <p *ngIf="desc.errors?.required"> Description Is Required</p>
+                    <p *ngIf="desc.errors?.minlength">  min Length 50 Your Enter {{desc.errors.minlength.actualLength}}</p>
+                </div>
+            
+                <button type="submit"  [disabled]="f.invalid" class="btn btn-1">
+                    <span class="txt">save</span>
+                    <span class="round"><i class="fa fa-chevron-right"></i></span>
+                </button>
+                <button type="button" [hidden]="isMode" (click)="delete()"  class="btn btn-del btn-1">
+                    <span class="txt">Delete</span>
+                    <span class="round"><i class="fa fa-chevron-right"></i></span>
+                </button>
+                <button type="button" [hidden]="isMode" (click)="cancel()" class="btn btn-1">
+                    <span class="txt">Cancel</span>
+                    <span class="round"><i class="fa fa-chevron-right"></i></span>
+                </button>
+            </form>
+        </div>
+        <div class="col-sm-5">
+          
+            <div class="row" *ngIf="title.value || imageUrl.value || rate.value || price.value">
+                <div class="parent-item">
+                    <div class="item">
+                    <img *ngIf="imageUrl.value" [src]="imageUrl.value">
+                    <div class="overlay"></div>
+                   <p>{{title.value}}</p>
+                   <span class="price">{{price.value}} $
+                   </span>
+                  <span class="rate" *ngIf="rate.value === 'star2'">
+                    <div class="rating">
+                              <span class="fa fa-stack">
+                            <i class="fa fa-star fa-stack-1x"></i>
+                            </span> 
+                            <span class="fa fa-stack">
+                            <i class="fa fa-star fa-stack-1x"></i>
+                            </span> 
+                            <span class="fa fa-stack">
+                                <i class="fa  fa-star-o fa-stack-1x"></i>
+                            </span> 
+                            <span class="fa fa-stack">
+                                <i class="fa  fa-star-o  fa-stack-1x"></i>
+                            </span>
+                            <span class="fa fa-stack">
+                                    <i class="fa fa-star-o fa-stack-1x"></i>
+                            </span> 
+                        </div>
+                  
+                  </span>
+                  <span class="rate" *ngIf="rate.value === 'star3'">
+                    <div class="rating">
+                        <span class="fa fa-stack">
+                            <i class="fa fa-star fa-stack-1x"></i>
+                            </span> 
+                            <span class="fa fa-stack">
+                            <i class="fa fa-star fa-stack-1x"></i>
+                            </span> 
+                            <span class="fa fa-stack">
+                                <i class="fa fa-star fa-stack-1x"></i>
+                            </span> 
+                            <span class="fa fa-stack">
+                                <i class="fa fa-star-o fa-stack-1x"></i>
+                            </span>
+                            <span class="fa fa-stack">
+                                    <i class="fa fa-star-o fa-stack-1x"></i>
+                            </span> 
+                        </div>
+                  
+                  </span>
+                  <span class="rate" *ngIf="rate.value === 'star4'">
+                    <div class="rating">
+                        <span class="fa fa-stack">
+                            <i class="fa fa-star fa-stack-1x"></i>
+                            </span> 
+                            <span class="fa fa-stack">
+                            <i class="fa fa-star fa-stack-1x"></i>
+                            </span> 
+                            <span class="fa fa-stack">
+                                <i class="fa fa-star fa-stack-1x"></i>
+                            </span> 
+                            <span class="fa fa-stack">
+                                <i class="fa fa-star fa-stack-1x"></i>
+                            </span>
+                            <span class="fa fa-stack">
+                                    <i class="fa fa-star-o fa-stack-1x"></i>
+                            </span> 
+                        </div>
+                  
+                  </span>
+                  <span class="rate" *ngIf="rate.value === 'star5'">
+                    <div class="rating">
+                        <span class="fa fa-stack">
+                            <i class="fa fa-star fa-stack-1x"></i>
+                            </span> 
+                            <span class="fa fa-stack">
+                            <i class="fa fa-star fa-stack-1x"></i>
+                            </span> 
+                            <span class="fa fa-stack">
+                                <i class="fa fa-star fa-stack-1x"></i>
+                            </span> 
+                            <span class="fa fa-stack">
+                                <i class="fa fa-star fa-stack-1x"></i>
+                            </span>
+                            <span class="fa fa-stack">
+                                    <i class="fa fa-star fa-stack-1x"></i>
+                            </span> 
+                        </div>
+                  
+                  </span>
+                    
+
+                    </div>
+                </div>
+    </div>
+</div>

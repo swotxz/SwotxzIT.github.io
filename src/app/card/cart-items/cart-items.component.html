@@ -1,0 +1,160 @@
+
+<div *ngIf="cart$ | async as cart;else noItem">
+    <ng-container *ngIf="(cart.getTotlCount != 0 && cart.getTotlCount != null);else nocartselect">
+    <div class="row">
+    <h3>Shopping Cart</h3>
+    <hr class="under-title">
+    <h5>Items ( {{cart.getTotlCount}} )</h5>
+    <div class="row">
+        <hr class="under-items">
+        <ng-container *ngFor="let item of cart.items">
+        <div class="shop-item" >
+               <div class="image">
+                    <img [src]="item.imageUrl">
+               </div> 
+               <div class="detalis">
+                    <h5>{{item.title}}</h5>
+                    
+                        <span class="rate" *ngIf="item.rate === 'star2'">
+                            <div class="rating">
+                                      <span class="fa fa-stack">
+                                    <i class="fa fa-star fa-stack-1x"></i>
+                                    </span> 
+                                    <span class="fa fa-stack">
+                                    <i class="fa fa-star fa-stack-1x"></i>
+                                    </span> 
+                                    <span class="fa fa-stack">
+                                        <i class="fa  fa-star-o fa-stack-1x"></i>
+                                    </span> 
+                                    <span class="fa fa-stack">
+                                        <i class="fa  fa-star-o  fa-stack-1x"></i>
+                                    </span>
+                                    <span class="fa fa-stack">
+                                            <i class="fa fa-star-o fa-stack-1x"></i>
+                                    </span> 
+                                </div>
+                          
+                          </span>
+                          <span class="rate" *ngIf="item.rate === 'star3'">
+                            <div class="rating">
+                                <span class="fa fa-stack">
+                                    <i class="fa fa-star fa-stack-1x"></i>
+                                    </span> 
+                                    <span class="fa fa-stack">
+                                    <i class="fa fa-star fa-stack-1x"></i>
+                                    </span> 
+                                    <span class="fa fa-stack">
+                                        <i class="fa fa-star fa-stack-1x"></i>
+                                    </span> 
+                                    <span class="fa fa-stack">
+                                        <i class="fa fa-star-o fa-stack-1x"></i>
+                                    </span>
+                                    <span class="fa fa-stack">
+                                            <i class="fa fa-star-o fa-stack-1x"></i>
+                                    </span> 
+                                </div>
+                          
+                          </span>
+                          <span class="rate" *ngIf="item.rate === 'star4'">
+                            <div class="rating">
+                                <span class="fa fa-stack">
+                                    <i class="fa fa-star fa-stack-1x"></i>
+                                    </span> 
+                                    <span class="fa fa-stack">
+                                    <i class="fa fa-star fa-stack-1x"></i>
+                                    </span> 
+                                    <span class="fa fa-stack">
+                                        <i class="fa fa-star fa-stack-1x"></i>
+                                    </span> 
+                                    <span class="fa fa-stack">
+                                        <i class="fa fa-star fa-stack-1x"></i>
+                                    </span>
+                                    <span class="fa fa-stack">
+                                            <i class="fa fa-star-o fa-stack-1x"></i>
+                                    </span> 
+                                </div>
+                          
+                          </span>
+                          <span class="rate" *ngIf="item.rate === 'star5'">
+                            <div class="rating">
+                                <span class="fa fa-stack">
+                                    <i class="fa fa-star fa-stack-1x"></i>
+                                    </span> 
+                                    <span class="fa fa-stack">
+                                    <i class="fa fa-star fa-stack-1x"></i>
+                                    </span> 
+                                    <span class="fa fa-stack">
+                                        <i class="fa fa-star fa-stack-1x"></i>
+                                    </span> 
+                                    <span class="fa fa-stack">
+                                        <i class="fa fa-star fa-stack-1x"></i>
+                                    </span>
+                                    <span class="fa fa-stack">
+                                            <i class="fa fa-star fa-stack-1x"></i>
+                                    </span> 
+                                </div>
+                          
+                          </span>
+                        
+                    
+                    <span class="price">{{item.price}} $</span>
+                  
+                    <button type="button" (click)="removeItem(item,getQuantity(item))"  class="btn btn-del btn-1">
+                        <span class="txt">Delete</span>
+                        <span class="round"><i class="fa fa-chevron-right"></i></span>
+                    </button>
+
+               </div>  
+               <div class="addCart">
+                      <button *ngIf="getQuantity(item) >=2;else asd" (click)="removeFromCart(item)"> - </button>
+                     <ng-template #asd>
+                        <button disabled > - </button>
+                     </ng-template>
+                  
+                     <input style="text-align: center;" [value]="getQuantity(item)" readonly>
+                    <button (click)="AddtoCart(item)"> +  </button>
+                    <p> Total price : <span class="totalPrice"> {{item.totalItemPrice}} $ </span></p>
+                </div>
+               
+                
+        </div>
+        <hr class="under-items">
+  
+    </ng-container>
+      
+     
+    </div>
+
+</div>
+<div class="clearAll">
+    <button type="button" (click)="clearAll()" >
+        <span class="txt">Remove All Cart </span>
+        <span class="round"><i class="fa fa-chevron-right"></i></span>
+    </button>
+</div>
+</ng-container>
+<ng-template #nocartselect>
+    <div>
+        <h3>Shopping Cart</h3>
+        <hr>
+        <h5>Items (0) </h5> 
+        <div class="alert alert-warning"  role="alert">
+            <h5> Shopping Cart is Empty...  </h5>  
+          </div> 
+    </div>
+               
+
+</ng-template>
+</div>
+<ng-template #noItem>
+    <div>
+        <h3>Shopping Cart</h3>
+        <hr>
+        <h5>Items (0) </h5> 
+        <div class="alert alert-warning"  role="alert">
+            <h5> Shopping Cart is Empty...  </h5>  
+          </div> 
+    </div>
+               
+
+</ng-template>

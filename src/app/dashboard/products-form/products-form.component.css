@@ -1,0 +1,236 @@
+input.ng-invalid.ng-touched{
+  border: 1px solid red;
+}
+
+.parent-item{
+    padding:5px;
+    margin-top: 10px;
+    height: auto;
+}
+.item{
+    
+    position: relative;
+    transition: 3s;
+    height:100%;
+    background: #f8f8f8;
+    display: block;
+    padding: 0;
+}
+
+.item:hover .overlay{
+    opacity: 1;
+}
+
+.item img{
+    width: 94%;
+    height:270px;
+    margin: 8px;
+    object-fit: cover;
+}
+
+
+.item .overlay{
+     position: absolute;
+  top: 0;
+  opacity: 0;
+     height: 270px;
+    top:0%;
+    bottom: 0;
+  left: 0;
+  right: 0;
+  transition: .5s ease;
+  background-color:rgba(0,0,0,0.4);
+    cursor: pointer;
+    width: 95%;
+    margin: 8px auto;
+}
+.item .btnCart{
+    width: 95%;
+    margin: auto;
+}
+.item .btnCart button{
+    height: 45px;
+    border: 1px solid #DDD;
+    background: #FFF;
+    text-transform: uppercase;
+    color: #5f5f5f;
+    transition: 0.5s;
+}
+.item .btnCart button:hover{
+background:#fcb316 ;
+color:#FFF;
+border:1px solid #fcb316;
+}
+.item .btnCart button:focus{
+    outline: #fcb316;
+}
+.item .eyes{
+width:25%;
+font-size: 22px;
+}
+.item .cart{
+    width:50%;
+    font-weight: 500;
+    font-size: 15px;
+    box-shadow: 0 0 7px rgb(218, 218, 218);
+}
+.item .like{
+    width: 25%;
+    font-size: 22px;
+}
+p{
+        font-size: 18px;
+    margin-top: 5px;
+        margin-bottom: 0px;
+        text-align: left;
+    padding-left:10px ;
+}
+.price{
+    float: left;
+    padding-left: 10px;
+    color:#fcb316;
+    font-size: 18px;
+}
+
+.rate{
+    float: right;
+    padding-right: 10px;
+}
+
+.rating {
+    line-height: 1;
+}
+.fa-stack {
+    height: 12px;
+    line-height: 1;
+    width: 10px;
+    margin: 3px;
+}
+.fa.fa-star-o.fa-stack-1x, .fa.fa-star.fa-stack-x {
+    color: #b2b2b2;
+}
+.fa-stack-1x, .fa-stack-x {
+    font-size: 15px;
+}
+.fa.fa-star.fa-stack-1x {
+    color: #fcb316;
+}
+
+
+ .btn-1 {
+    background-color: #fcb316;
+  }
+  .btn-del{
+    background-color: #d9534f;
+  }
+    .btn-1 .round {
+    background-color: #f3cd7b;
+  }
+  .btn-del .round{
+    background-color: #ff9494;
+  }
+  input:focus,button:focus,select:focus{
+     box-shadow: none;
+     outline: 0;
+  }
+  input,select{
+    margin-bottom: -10px;
+  }
+    button {
+    text-decoration: none;
+    -moz-border-radius: 30px;
+    -webkit-border-radius: 30px;
+    border-radius: 30px;
+    padding: 6px 40px 6px 15px;
+    color: #fff;
+    text-transform: uppercase;
+    font-family: sans-serif;
+    font-weight: bold;
+    position: relative;
+    transition: all 0.3s;
+    display: inline-block;
+    margin: 10px 3px 0 0;
+  }
+    button span {
+    position: relative;
+    z-index: 3;
+  }
+    button .round {
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    right: 3px;
+    top: 4px;
+    -moz-transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
+    -webkit-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
+    z-index: 2;
+  }
+     button .round i {
+    position: absolute;
+    top: 50%;
+    margin-top: -9px;
+    left: 50%;
+    margin-left: -4px;
+    -moz-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+  }
+  
+    .txt {
+    font-size: 15px;
+    line-height: 1.45;
+  }
+  
+  hr{
+    width: 140px;
+    background-color: #fcb316;
+    border-width: unset;
+}
+   .round {
+    background: transparent;
+  }
+    button {
+    position: relative;
+    overflow: hidden;
+  }   a:focus{
+      outline: none;
+  }
+    button.btn-1:after {
+    background-color: #f3cd7b;
+  }
+  button.btn-del:after{
+    background-color: #ff9494;
+  }
+    button:after {
+    content: "";
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    right: 4px;
+    top: 3px;
+    -moz-transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
+    -webkit-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
+  }
+    button:hover:after {
+    right: 100%;
+    width: 50%;
+  }
+    button:hover i {
+    margin-left: 4px;
+  }
+
+textarea:focus{
+  outline: 0;
+  box-shadow: none;
+}

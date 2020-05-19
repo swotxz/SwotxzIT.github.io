@@ -1,0 +1,29 @@
+
+<table  datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="table-striped table-bordered dt-responsive nowrap">
+        <thead class="thead-dark">
+            <tr>
+                <th>Image</th>
+                <th>Title</th>
+                <th>Price</th>
+                <th>Edit</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let p of filteredProducts ">
+                <td> <img [src]="p.payload.val().imageUrl" class="card-img-top" style="width: 50px; height: 50px;object-fit: contain;"></td>
+                <td>{{p.payload.val().title}}</td>
+                <td>{{p.payload.val().price}} $</td>
+                <td>
+                     <ng-container *ngIf="p.payload.val().user !== aUser.email;else ess" >
+                        <a style="cursor: pointer;" (click)="info()"> <i class="fa fa-edit"></i> </a>
+                    </ng-container>
+                     <ng-template #ess>
+                        <a [routerLink]="['/dashboard/products/',p.key]"> <i class="fa fa-edit"></i> </a>
+                    </ng-template>
+                </td>
+            </tr>
+        </tbody>
+</table>
+
+
+<app-spinner *ngIf="showSpinner"></app-spinner>

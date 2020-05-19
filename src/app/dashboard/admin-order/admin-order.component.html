@@ -1,0 +1,73 @@
+
+  <div style="overflow-x:auto;">
+    <table class="table">
+        <thead class="thead-li">
+            <tr>
+                <th>#</th>
+                <th>Name</th>
+                <th>City</th>
+                <th>phone</th>
+                <th>Date</th>
+                <th>view </th>
+                <th>Remove</th>
+            </tr>
+        </thead>
+        <tbody>
+                <tr *ngFor="let or of orders;let i=index">
+                    <td style="font-weight:bold;">{{i+1}}</td>
+                    <td>
+                       {{or.payload.val().shipping.name}}
+                    </td>
+                    <td>
+                        {{or.payload.val().shipping.city}}
+                    </td>
+                    <td>
+                        {{or.payload.val().shipping.phone}}
+                    </td>
+                    <td>
+                        {{or.payload.val().datePlaced | date :'dd-MMM-yy h:mm a'}}
+                    </td>
+                     
+                    <td>
+                        <a class="view" (click)="openUersInfo(or)"> <i class="fa fa-eye"></i> </a>
+                    </td>
+                    <td>
+                        <a class="remove" (click)="removeOrder(or.key)"> <i class="fa fa-remove"></i> </a>
+                    </td>
+                </tr>
+               
+        </tbody>
+    </table>
+</div>
+ <div class="items" *ngIf="property" style="overflow:auto;">
+    <h3>Order Details </h3>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <table class="table">
+                    <thead>
+                        <tr>
+                        <th>#</th>
+                        <th>Image</th>
+                        <th>name</th>
+                        <th>quantity</th>
+                        <th>total Price</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                        <tr  *ngFor="let o of property.payload.val().items;let i=index">
+                        <td style="font-weight: 700;">{{i+1}}</td>
+                        <td><img [src]="o.product.imageUrl"></td>
+                        <td>{{o.product.title}}</td>
+                        <td>{{o.quantity}}</td>
+                        <td>{{o.totalPrice}} $</td>
+                    </tr>
+                    </tbody>
+                </table>
+               
+            </div>
+        </div>
+    </div>
+    
+    <button class="btn btn-secondary" (click)="close()">Close</button>
+ </div>

@@ -1,0 +1,106 @@
+<div *ngIf="cart;else noCart">
+<ng-container *ngIf="(cart.getTotlCount != 0 && cart.getTotlCount != null);else nocartselect">
+<div class="container">
+    <div class="card ">
+        <div class="card-header">
+            <h3>Shopping Order</h3>
+        </div>
+        <div class="card-body">
+            <form (ngSubmit)="placeOrder(f.value)" #f="ngForm">
+                <div class="input-group form-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="fa fa-user"></i></span>
+                    </div>
+                    <input type="text" name="name" class="form-control" placeholder="Name"
+                     ngModel  #name="ngModel" required>
+                    
+                </div>
+                <p *ngIf="name.invalid && name.touched">Name Is Required</p>
+
+                <div class="input-group form-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="fa fa-address-card"></i></span>
+                    </div>
+
+                    <input type="text"  name="city" class="form-control" placeholder="City"
+                     ngModel #city="ngModel" required >
+                </div>
+                <p *ngIf="city.invalid && city.touched">City Is Required</p>
+
+                <div class="input-group form-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="fa fa-address-card"></i></span>
+                    </div>
+                    <input type="text" name="line1" class="form-control" placeholder="Adress Line 1"
+                     ngModel  #line1="ngModel" required>
+                    
+                </div>
+                <p *ngIf="line1.invalid && line1.touched">Adress Line 1 Is Required</p>
+
+                <div class="input-group form-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="fa fa-address-card"></i></span>
+                    </div>
+                    <input type="text" name="line2" class="form-control" placeholder="Adress Line 2"
+                     ngModel  #line2="ngModel" required>
+                    
+                </div>
+                <p *ngIf="line2.invalid && line2.touched">Adress Line 2 Is Required</p>
+
+                <div class="input-group form-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="fa fa-phone"></i></span>
+                    </div>
+                    <input type="text" name="phone" class="form-control" placeholder="phone Number"
+                    ngModel #phone="ngModel" required minlength="11" maxlength="11">
+                </div>
+                <p *ngIf="phone.touched && phone.errors?.required">Phone Number Is Required </p>
+                <p *ngIf="phone.touched && phone.errors?.minlength">Number Should Be Length 11  </p>
+
+                <div class="input-group form-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="fa fa-id-card"></i></span>
+                    </div>
+                    <input type="text" name="ident" class="form-control" placeholder="Identical number"
+                    ngModel #ident="ngModel" required minlength="14" maxlength="14">
+                </div>
+                <p *ngIf="ident.touched && ident.errors?.required">Identical number Number Is Required </p>
+                <p *ngIf="ident.touched && ident.errors?.minlength">Identical number Should Be Length 14  </p>
+
+                <div class="form-group">
+                    <input type="submit" value="Add"
+                     [disabled]="f.invalid " 
+                     class="btn float-right login_btn">
+                </div>
+                <div class="form-group">
+                    <input type="button" value="Edit Order" style="margin-right: 10px;" (click)="editOrder()"
+                     class="btn float-right login_btn">
+                </div>
+            </form>
+        </div>
+</div>
+</div>
+</ng-container>
+<ng-template #nocartselect>
+    <div>
+        <h3>Shopping Order</h3>
+        <hr>
+        <h5>Items (0) </h5> 
+       
+        <div class="alert alert-warning"  role="alert">
+            <h5> Your Cart is Empty , Cannot Check Out without select items ...  </h5>  
+          </div> 
+    </div>
+</ng-template>
+</div>
+<ng-template #noCart>
+    <div>
+        <h3>Shopping Order</h3>
+        <hr>
+        <h5>Items (0) </h5> 
+       
+        <div class="alert alert-warning"  role="alert">
+            <h5> Your Cart is Empty , Cannot Check Out without select items ...  </h5>  
+          </div> 
+    </div>
+</ng-template>

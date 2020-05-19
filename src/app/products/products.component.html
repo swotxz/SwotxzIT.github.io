@@ -1,0 +1,374 @@
+
+<div class="bgImage">
+    <div class="overlay">
+
+    </div>
+</div>
+
+<svg  class="curveDownColor" xmlns="http://www.w3.org/2000/svg" version="1.1"
+ width="100%" height="100" viewBox="0 0 100 100" preserveAspectRatio="none" 
+ style="transform: rotate(180deg); margin-top: -100px; fill: #fff;">
+    <path d="M0 0 C 40 100 80 10 100 0 Z"></path>
+</svg>
+
+
+<!--        start our team-->
+<section class="team" id="about">
+    <h1>Products</h1>
+    <hr>
+
+
+  <div class="container-fluid">
+   <div class="row">
+       <div class="col-sm-12">
+           <div class="row">
+               <div class="col-md-3 col-sm-12">
+        <div class="minSizwCat">
+                <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                    <a class="navbar-brand" >Filter Products</a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                      <span class="navbar-toggler-icon"></span>
+                    </button>
+                  
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                      <ul class="navbar-nav mr-auto">
+                        <li class="nav-item " style="text-align: left;">
+                            <h6>Search : </h6>
+                                <input class="form-control" [value]="minSearch" #query1 placeholder="Search " (keyup)="minfilter(query1.value)" 
+                                type="text">
+                        </li>
+                        <li class="nav-item" style="text-align: left;">
+                            <h6>Sort By Price : </h6>
+                            <select  (change)="onSelectChange($event.target.value)"  class="form-control">
+                                <option value="DEF" >Default Search</option>
+                                <option value="LTH">Lowet To Height</option>
+                                <option value="HTL">Height To Lowest</option>
+                            </select> 
+                        </li>
+
+                        <li class="nav-item dropdown">
+                          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Categories
+                          </a>
+                          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <button type="button" (click)="(!category) ? query.value : query.value=''" [class.active]="!category" 
+                            routerLink="/products"  [queryParams]="{ category :'',rate:rate}" 
+                              class="dropdown-item" >
+                               All Products
+                           </button>
+
+                            <ng-container *ngFor="let c of categories$ | async">
+                           
+                               <button  type="button" (click)="(category === c.payload.val().name)? query.value:  query.value=''" [class.active]="category === c.payload.val().name " 
+                               routerLink="/products"
+                               [queryParams]="{ category : c.payload.val().name,rate:rate}"
+                               class="dropdown-item" href="#">{{c.payload.val().name}}</button>
+                            </ng-container>
+                          </div>
+                        </li>
+
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                              Rate
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <button type="button" [class.active]="!rate" 
+                                routerLink="/products"  [queryParams]="{ category :category,rate:''}"
+                                class="list-group-item list-group-item-action ">
+                                   Random Rate
+                                </button>
+                                
+                                <button type="button" 
+                                routerLink="/products"
+                                [class.active]="rate === 'star5' " 
+                                [queryParams]="{ category : category , rate:'star5'}"
+                                class="list-group-item list-group-item-action ">
+                                   
+                                    <span class="rate">
+                                        <div class="rating">
+                                                  <span class="fa fa-stack">
+                                                <i class="fa fa-star fa-stack-1x"></i>
+                                                </span> 
+                                                <span class="fa fa-stack">
+                                                <i class="fa fa-star fa-stack-1x"></i>
+                                                </span> 
+                                                <span class="fa fa-stack">
+                                                    <i class="fa  fa-star fa-stack-1x"></i>
+                                                </span> 
+                                                <span class="fa fa-stack">
+                                                    <i class="fa  fa-star  fa-stack-1x"></i>
+                                                </span>
+                                                <span class="fa fa-stack">
+                                                        <i class="fa fa-star fa-stack-1x"></i>
+                                                </span> 
+                                            </div>
+                                      </span>
+    
+                                 </button>
+                                 <button type="button" 
+                                 routerLink="/products"
+                                 [class.active]="rate === 'star4' " 
+                                 [queryParams]="{ category : category , rate:'star4'}"
+                                 
+                                 class="list-group-item list-group-item-action ">
+                                   
+                                    <span class="rate">
+                                        <div class="rating">
+                                                  <span class="fa fa-stack">
+                                                <i class="fa fa-star fa-stack-1x"></i>
+                                                </span> 
+                                                <span class="fa fa-stack">
+                                                <i class="fa fa-star fa-stack-1x"></i>
+                                                </span> 
+                                                <span class="fa fa-stack">
+                                                    <i class="fa  fa-star fa-stack-1x"></i>
+                                                </span> 
+                                                <span class="fa fa-stack">
+                                                    <i class="fa  fa-star  fa-stack-1x"></i>
+                                                </span>
+                                                <span class="fa fa-stack">
+                                                        <i class="fa fa-star-o fa-stack-1x"></i>
+                                                </span> 
+                                            </div>
+                                      </span>
+    
+                                 </button>
+                                 <button type="button"
+                                 routerLink="/products"
+                                 [class.active]="rate === 'star3' " 
+                                 [queryParams]="{ category : category , rate:'star3'}"
+    
+                                 class="list-group-item list-group-item-action ">
+                                  
+                                    <span class="rate">
+                                        <div class="rating">
+                                                  <span class="fa fa-stack">
+                                                <i class="fa fa-star fa-stack-1x"></i>
+                                                </span> 
+                                                <span class="fa fa-stack">
+                                                <i class="fa fa-star fa-stack-1x"></i>
+                                                </span> 
+                                                <span class="fa fa-stack">
+                                                    <i class="fa  fa-star fa-stack-1x"></i>
+                                                </span> 
+                                                <span class="fa fa-stack">
+                                                    <i class="fa  fa-star-o  fa-stack-1x"></i>
+                                                </span>
+                                                <span class="fa fa-stack">
+                                                        <i class="fa fa-star-o fa-stack-1x"></i>
+                                                </span> 
+                                            </div>
+                                      </span>
+                                 </button>
+                            
+                                 <button type="button" 
+                                 routerLink="/products"
+                                 [class.active]="rate === 'star2' " 
+                                 [queryParams]="{ category : category , rate:'star2'}"
+                                 class="list-group-item list-group-item-action ">
+                                   
+                                    <span class="rate">
+                                        <div class="rating">
+                                                  <span class="fa fa-stack">
+                                                <i class="fa fa-star fa-stack-1x"></i>
+                                                </span> 
+                                                <span class="fa fa-stack">
+                                                <i class="fa fa-star fa-stack-1x"></i>
+                                                </span> 
+                                                <span class="fa fa-stack">
+                                                    <i class="fa  fa-star-o fa-stack-1x"></i>
+                                                </span> 
+                                                <span class="fa fa-stack">
+                                                    <i class="fa  fa-star-o  fa-stack-1x"></i>
+                                                </span>
+                                                <span class="fa fa-stack">
+                                                        <i class="fa fa-star-o fa-stack-1x"></i>
+                                                </span> 
+                                            </div>
+                                      </span>
+                                    
+                                 </button>
+
+                            </div>
+                          </li>
+                      </ul>
+                    </div>
+                  </nav>
+            </div>
+
+                    <div class="category">
+                        <div class="list-group">
+                            <button type="button" (click)="(!category) ? query.value : query.value=''" [class.active]="!category" 
+                             routerLink="/products"  [queryParams]="{ category :'',rate:rate}"  class="list-group-item list-group-item-action ">
+                                All Products
+                            </button>
+                            <ng-container *ngFor="let c of categories$ | async">
+                                <button type="button" (click)="(category === c.payload.val().name)? query.value:  query.value=''" [class.active]="category === c.payload.val().name " 
+                                routerLink="/products"
+                                [queryParams]="{ category : c.payload.val().name,rate:rate}"
+                                class="list-group-item list-group-item-action">{{c.payload.val().name}}</button>
+                            </ng-container>
+                          </div>
+                            <div class="form-group" style="margin-top: 20px; text-align: left;">
+                                <h6>Search : </h6>
+                                <input class="form-control" [value]="search" #query placeholder="Search " (keyup)="filter(query.value)" 
+                                type="text">
+                            </div>
+                        <div style="margin-top: 20px; text-align: left;">
+                            <h6>Sort By Price : </h6>
+                            <select  (change)="onSelectChange($event.target.value)"  class="form-control">
+                                <option value="DEF" >Default Search</option>
+                                <option value="LTH">Lowet To Height</option>
+                                <option value="HTL">Height To Lowest</option>
+                            </select>                            
+                        </div>
+
+                        <div class="list-group rategroup" style="margin-top: 10px;">
+                            <button type="button" [class.active]="!rate" 
+                            routerLink="/products"  [queryParams]="{ category :category,rate:''}"
+                            class="list-group-item list-group-item-action ">
+                               Random Rate
+                            </button>
+                            
+                            <button type="button" 
+                            routerLink="/products"
+                            [class.active]="rate === 'star5' " 
+                            [queryParams]="{ category : category , rate:'star5'}"
+                            class="list-group-item list-group-item-action ">
+                               
+                                <span class="rate">
+                                    <div class="rating">
+                                              <span class="fa fa-stack">
+                                            <i class="fa fa-star fa-stack-1x"></i>
+                                            </span> 
+                                            <span class="fa fa-stack">
+                                            <i class="fa fa-star fa-stack-1x"></i>
+                                            </span> 
+                                            <span class="fa fa-stack">
+                                                <i class="fa  fa-star fa-stack-1x"></i>
+                                            </span> 
+                                            <span class="fa fa-stack">
+                                                <i class="fa  fa-star  fa-stack-1x"></i>
+                                            </span>
+                                            <span class="fa fa-stack">
+                                                    <i class="fa fa-star fa-stack-1x"></i>
+                                            </span> 
+                                        </div>
+                                  </span>
+
+                             </button>
+                             <button type="button" 
+                             routerLink="/products"
+                             [class.active]="rate === 'star4' " 
+                             [queryParams]="{ category : category , rate:'star4'}"
+                             
+                             class="list-group-item list-group-item-action ">
+                               
+                                <span class="rate">
+                                    <div class="rating">
+                                              <span class="fa fa-stack">
+                                            <i class="fa fa-star fa-stack-1x"></i>
+                                            </span> 
+                                            <span class="fa fa-stack">
+                                            <i class="fa fa-star fa-stack-1x"></i>
+                                            </span> 
+                                            <span class="fa fa-stack">
+                                                <i class="fa  fa-star fa-stack-1x"></i>
+                                            </span> 
+                                            <span class="fa fa-stack">
+                                                <i class="fa  fa-star  fa-stack-1x"></i>
+                                            </span>
+                                            <span class="fa fa-stack">
+                                                    <i class="fa fa-star-o fa-stack-1x"></i>
+                                            </span> 
+                                        </div>
+                                  </span>
+
+                             </button>
+                             <button type="button"
+                             routerLink="/products"
+                             [class.active]="rate === 'star3' " 
+                             [queryParams]="{ category : category , rate:'star3'}"
+
+                             class="list-group-item list-group-item-action ">
+                              
+                                <span class="rate">
+                                    <div class="rating">
+                                              <span class="fa fa-stack">
+                                            <i class="fa fa-star fa-stack-1x"></i>
+                                            </span> 
+                                            <span class="fa fa-stack">
+                                            <i class="fa fa-star fa-stack-1x"></i>
+                                            </span> 
+                                            <span class="fa fa-stack">
+                                                <i class="fa  fa-star fa-stack-1x"></i>
+                                            </span> 
+                                            <span class="fa fa-stack">
+                                                <i class="fa  fa-star-o  fa-stack-1x"></i>
+                                            </span>
+                                            <span class="fa fa-stack">
+                                                    <i class="fa fa-star-o fa-stack-1x"></i>
+                                            </span> 
+                                        </div>
+                                  </span>
+                             </button>
+                        
+                             <button type="button" 
+                             routerLink="/products"
+                             [class.active]="rate === 'star2' " 
+                             [queryParams]="{ category : category , rate:'star2'}"
+                             class="list-group-item list-group-item-action ">
+                               
+                                <span class="rate">
+                                    <div class="rating">
+                                              <span class="fa fa-stack">
+                                            <i class="fa fa-star fa-stack-1x"></i>
+                                            </span> 
+                                            <span class="fa fa-stack">
+                                            <i class="fa fa-star fa-stack-1x"></i>
+                                            </span> 
+                                            <span class="fa fa-stack">
+                                                <i class="fa  fa-star-o fa-stack-1x"></i>
+                                            </span> 
+                                            <span class="fa fa-stack">
+                                                <i class="fa  fa-star-o  fa-stack-1x"></i>
+                                            </span>
+                                            <span class="fa fa-stack">
+                                                    <i class="fa fa-star-o fa-stack-1x"></i>
+                                            </span> 
+                                        </div>
+                                  </span>
+                                
+                             </button>
+                          
+                          </div>
+                        
+                    </div>
+               </div>
+
+               <div class="col-md-9 col-sm-12">
+                <div class="row">
+                    <ng-container *ngFor="let product of SearchProducts">
+                        <div class="parent-item col-lg-3 col-md-6 col-sm-12">
+                         <product-card [product]="product" [shoppingCart]="cart"></product-card>
+                        </div>
+                    </ng-container>
+                    <div style="margin: auto;">
+                        <app-spinner *ngIf="showSpinner"></app-spinner>
+                    </div>
+                </div>
+               </div>
+           </div> 
+     
+       </div>
+
+        
+   
+
+    
+      </div>
+</div>
+</section>
+<app-footer></app-footer>
+<div class="topbtn">   <i class="fa fa-arrow-up"></i> </div>

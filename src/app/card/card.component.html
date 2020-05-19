@@ -1,0 +1,57 @@
+
+<div class="bgImage">
+    <div class="overlay">
+
+    </div>
+</div>
+
+<svg  class="curveDownColor" xmlns="http://www.w3.org/2000/svg" version="1.1"
+ width="100%" height="100" viewBox="0 0 100 100" preserveAspectRatio="none" 
+ style="transform: rotate(180deg); margin-top: -100px; fill: #fff;">
+    <path d="M0 0 C 40 100 80 10 100 0 Z"></path>
+</svg>
+
+<section class="cart">
+    <div class="container">
+        
+        <div class="row">
+            <div class="col-md-8 col-sm-12">
+                <router-outlet> </router-outlet>
+            </div>
+            <div class="col-md-4 col-sm-12"> 
+                <div class="row">
+                        <ng-container *ngIf="cart$ | async as cart">
+                            <div class="shopCart"  *ngIf="cart.getTotlCount != 0 && cart.getTotlCount != null">
+                           <p>Order Summery</p>
+                            <hr>
+                            <div class="summery-Body">
+                                <ul *ngFor="let item of cart.items">
+                                    
+                                        <li>
+                                            <span class="title">{{getQuantity(item)}} X {{item.title}}</span>
+                                            <span class="summeryPrice"> {{item.totalItemPrice}} $</span>
+                                        </li>  
+                                        <li>  <hr>  </li>
+                                </ul>
+                                <ul>
+                                    <li>
+                                        <span class="title">TOTAL : </span>
+                                        <span class="summeryPrice">{{cart.totalPrice}} $</span>
+                                     </li>
+                                </ul>
+                                <button class="check-out" routerLink="/card/check-out/">
+                                    Check Out
+                                </button>
+                            </div>
+                        </div>
+                    </ng-container>
+                  
+                </div>
+           
+            </div>
+  
+        </div>
+    
+        </div>
+</section>
+<app-footer></app-footer>

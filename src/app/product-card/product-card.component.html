@@ -1,0 +1,98 @@
+
+ 
+    <div class="item">
+        <img  [src]="product.payload.val().imageUrl">
+        <div class="overlay"></div>
+        <div class="btnCart">
+            <button class="eyes" (click)="showProduct(product.key,product.payload.val().imageUrl,product.payload.val().title)"><i class="fa fa-eye"></i></button>
+          
+            <button *ngIf="getQuantity() === 0; else incart " class="cart"  (click)="addToCart()">Add To Cart</button>
+            <ng-template #incart>
+                <button class="cart " disabled >in Cart</button>
+            </ng-template>
+            </div>
+       <p >{{product.payload.val().title}}</p>
+       <span class="price"> $ {{product.payload.val().price}} </span>
+      <span class="rate" *ngIf="product.payload.val().rate === 'star2'">
+        <div class="rating">
+                  <span class="fa fa-stack">
+                <i class="fa fa-star fa-stack-1x"></i>
+                </span> 
+                <span class="fa fa-stack">
+                <i class="fa fa-star fa-stack-1x"></i>
+                </span> 
+                <span class="fa fa-stack">
+                    <i class="fa  fa-star-o fa-stack-1x"></i>
+                </span> 
+                <span class="fa fa-stack">
+                    <i class="fa  fa-star-o  fa-stack-1x"></i>
+                </span>
+                <span class="fa fa-stack">
+                        <i class="fa fa-star-o fa-stack-1x"></i>
+                </span> 
+            </div>
+      
+      </span>
+      <span class="rate" *ngIf="product.payload.val().rate === 'star3'">
+        <div class="rating">
+            <span class="fa fa-stack">
+                <i class="fa fa-star fa-stack-1x"></i>
+                </span> 
+                <span class="fa fa-stack">
+                <i class="fa fa-star fa-stack-1x"></i>
+                </span> 
+                <span class="fa fa-stack">
+                    <i class="fa fa-star fa-stack-1x"></i>
+                </span> 
+                <span class="fa fa-stack">
+                    <i class="fa fa-star-o fa-stack-1x"></i>
+                </span>
+                <span class="fa fa-stack">
+                        <i class="fa fa-star-o fa-stack-1x"></i>
+                </span> 
+            </div>
+      
+      </span>
+      <span class="rate" *ngIf="product.payload.val().rate === 'star4'">
+        <div class="rating">
+            <span class="fa fa-stack">
+                <i class="fa fa-star fa-stack-1x"></i>
+                </span> 
+                <span class="fa fa-stack">
+                <i class="fa fa-star fa-stack-1x"></i>
+                </span> 
+                <span class="fa fa-stack">
+                    <i class="fa fa-star fa-stack-1x"></i>
+                </span> 
+                <span class="fa fa-stack">
+                    <i class="fa fa-star fa-stack-1x"></i>
+                </span>
+                <span class="fa fa-stack">
+                        <i class="fa fa-star-o fa-stack-1x"></i>
+                </span> 
+            </div>
+      
+      </span>
+      <span class="rate" *ngIf="product.payload.val().rate === 'star5'">
+        <div class="rating">
+            <span class="fa fa-stack">
+                <i class="fa fa-star fa-stack-1x"></i>
+                </span> 
+                <span class="fa fa-stack">
+                <i class="fa fa-star fa-stack-1x"></i>
+                </span> 
+                <span class="fa fa-stack">
+                    <i class="fa fa-star fa-stack-1x"></i>
+                </span> 
+                <span class="fa fa-stack">
+                    <i class="fa fa-star fa-stack-1x"></i>
+                </span>
+                <span class="fa fa-stack">
+                        <i class="fa fa-star fa-stack-1x"></i>
+                </span> 
+            </div>
+      
+      </span>
+        
+        </div>
+

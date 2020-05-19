@@ -1,0 +1,288 @@
+.bgImage{
+    background-image: url(../../assets/12.jpg);
+    height: 100px;
+    width: 100%;
+}
+.bgImage .overlay{
+    position: absolute;
+    background-color: rgba(0,0,0,0.7);
+    width: 100%;
+    height: 100px;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+
+
+*{
+    box-sizing: border-box;
+}
+
+.ProductDetailID .show-Images img{
+    width:70%;
+    height: 400px;
+    margin-left: 15%;
+    object-fit:contain
+} 
+.ProductDetailID .images img{
+    width:70%;
+    object-fit:contain
+} 
+@media (max-width:576px){
+
+    .ProductDetailID img {
+        width: 60%;
+    }
+    .ProductDetailID .title h1 {
+        font-size: 30px;
+    }
+}
+
+.ProductDetailID .title h1{
+    color: #4c4c4c;
+}
+.ProductDetailID .title hr{
+    background-color: #d2d2d2;
+}
+.ProductDetailID .title p{
+    margin: 6px 0 ;
+    font-weight: bold;
+}
+.ProductDetailID .rating {
+    line-height: 1;
+}
+.ProductDetailID .fa-stack {
+    height: 12px;
+    line-height: 1;
+    width: 10px;
+    margin: 3px;
+}
+.ProductDetailID .fa.fa-star-o.fa-stack-1x, .ProductDetailID .fa.fa-star.fa-stack-x {
+    color: #b2b2b2;
+}
+.ProductDetailID .fa-stack-1x,.ProductDetailID .fa-stack-x {
+    font-size: 15px;
+}
+.ProductDetailID .fa.fa-star.fa-stack-1x {
+    color: #fcb316;
+}
+.ProductDetailID .desc{ 
+    color:#4c4c4c;
+}
+.ProductDetailID .quantity p{
+    font-size: 18px;
+    font-weight: 500;
+}
+/* .ProductDetailID .quantity span{
+    color: #4c4c4c;
+    font-size: 18px;
+    font-weight: 700;   
+} */
+.ProductDetailID .quantity input{
+    margin: 5px 0;
+    padding: 7px 20px;
+}
+.ProductDetailID .quantity input:focus{
+    outline: none;
+ }
+ 
+
+ .btn-1 {
+    background-color: #fcb316;
+  }
+  .btn-del{
+    background-color: #d9534f;
+  }
+    .btn-1 .round {
+    background-color: #f3cd7b;
+  }
+  .btn-del .round{
+    background-color: #ff9494;
+  }
+  input:focus,button:focus,select:focus{
+     box-shadow: none;
+     outline: 0;
+  }
+  input,select{
+    margin-bottom: -10px;
+  }
+    button {
+    text-decoration: none;
+    -moz-border-radius: 30px;
+    -webkit-border-radius: 30px;
+    border-radius: 30px;
+    padding: 6px 40px 6px 15px;
+    color: #fff;
+    text-transform: uppercase;
+    font-family: sans-serif;
+    font-weight: bold;
+    position: relative;
+    transition: all 0.3s;
+    display: inline-block;
+    margin: 10px 3px 0 0;
+  }
+    button span {
+    position: relative;
+    z-index: 3;
+  }
+    button .round {
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    right: 3px;
+    top: 4px;
+    -moz-transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
+    -webkit-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
+    z-index: 2;
+  }
+     button .round i {
+    position: absolute;
+    top: 50%;
+    margin-top: -9px;
+    left: 50%;
+    margin-left: -4px;
+    -moz-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+  }
+  
+    .txt {
+    font-size: 14px;
+    line-height: 1.45;
+  }
+  
+
+   .round {
+    background: transparent;
+  }
+    button {
+    position: relative;
+    overflow: hidden;
+  }   a:focus{
+      outline: none;
+  }
+    button.btn-1:after {
+    background-color: #f3cd7b;
+  }
+  button.btn-del:after{
+    background-color: #ff9494;
+  }
+    button:after {
+    content: "";
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    right: 4px;
+    top: 3px;
+    -moz-transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
+    -webkit-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
+  }
+    button:hover:after {
+    right: 100%;
+    width: 50%;
+  }
+    button:hover i {
+    margin-left: 4px;
+  }
+
+
+/*
+.ProductDetailID .comments  .comment{
+    width: 100%;
+}
+.ProductDetailID .comments  .comment div{
+    margin: 10px 0;
+    width: 100%;
+    height: 95px;
+    border-bottom: 1px solid #b7b7b7;
+}
+.ProductDetailID .comments  .comment img{
+    width:85px;
+    float: left;
+    margin: 0PX 12px 0 0;
+}
+.ProductDetailID .comments  .comment span{
+    font-size: 15px;
+    color: #e2e2e2;
+}
+.ProductDetailID .comments .comment h4{
+    margin: 0;
+    font-size: 19px;
+    text-transform: capitalize;
+    font-weight: 600;
+}
+.ProductDetailID .comments  .comment p{
+    color: #b7b7b7;
+    font-size: 14px;
+}
+.ProductDetailID .comments .formAdd input{
+    width: 48%;
+    display: inline-block;
+    margin: 10px 10px 10px 0;
+    border: none;
+    padding: 8px;
+} 
+.ProductDetailID .comments .formAdd input:focus{
+    outline: none;
+}
+.ProductDetailID .comments .formAdd textarea{
+    width: 97.5%;
+    padding: 8px;
+}
+.ProductDetailID .comments .formAdd textarea:focus{
+    outline: none;
+}
+.ProductDetailID .comments .formAdd button{
+    padding: 6px 15px;
+    border: none;
+    background: #424242;
+    color: #FFF;
+    transition: 0.5s;
+    border-radius: 0;
+    font-size: 20px;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin: 10px;
+}
+.ProductDetailID .comments .formAdd button:hover{
+    background-color: #fa4251;
+}
+.ProductDetailID .comments .formAdd button:focus{
+    outline: none;
+} */
+
+
+.images{
+width: 15%;
+}
+.images a{
+    display: block;
+    border: 1px solid #d2d2d2;
+    margin-top: 5px;
+    cursor: pointer;
+}
+.images a:hover{
+    border: 1px solid #fcb316;
+}
+.images a.active{
+    border: 1px solid #fcb316;
+}
+.show-Images{
+width: 85%;
+}
+
+.show-Images div{
+   border:  1px solid #d2d2d2;
+}

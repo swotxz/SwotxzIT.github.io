@@ -1,0 +1,204 @@
+.bgImage{
+    background-image: url(../../assets/12.jpg);
+    height: 100px;
+    width: 100%;
+}
+.bgImage .overlay{
+    position: absolute;
+    background-color: rgba(0,0,0,0.7);
+    width: 100%;
+    height: 100px;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+
+
+.team .category{
+    width: 100%;
+    margin-top:0;
+}
+
+@media only screen and (max-width: 768px){
+   
+    .team .minSizwCat{
+        display: block;
+    }
+    .team .category{
+        display: none;
+    }
+}
+.minSizwCat{
+    display: none;
+}
+.team .list-group-item.active {
+
+    background-color: #fcb316;
+    border-color: #fcb316;
+}
+.team .rategroup .list-group-item.active .fa-stack-1x {
+    color:#FFF;
+ 
+}
+
+
+.team{
+    margin-top: -40px;
+    padding:0 0 55px 0;
+    position: relative;
+    text-align: center;
+}
+.team hr{
+    width: 140px;
+    background-color: #fcb316;
+    border-width: unset;
+}
+.team h1{
+    text-align: center;
+}
+.row{
+    margin: 0;
+    padding: 0;
+}
+.team .parent-item{
+    padding:5px;
+    margin-top: 10px;
+    height: auto;
+}
+.team .item{
+    
+    position: relative;
+    transition: 3s;
+    height: 100%;
+    background: #f8f8f8;
+    display: block;
+    padding: 0;
+}
+
+.team .item:hover .overlay{
+    opacity: 1;
+}
+
+.team .item img{
+    width: 94%;
+    height: 65%;
+    margin-top: 8px;
+    object-fit: cover;
+}
+
+
+.team .item .overlay{
+     position: absolute;
+  top: 0;
+  opacity: 0;
+     height: 65%;
+    top:0%;
+    bottom: 0;
+  left: 0;
+  right: 0;
+  transition: .5s ease;
+  background-color:rgba(0,0,0,0.4);
+    cursor: pointer;
+    width: 95%;
+    margin: 8px auto;
+}
+.team .item .btnCart{
+    width: 95%;
+    margin: auto;
+}
+.team .item .btnCart button{
+    height: 45px;
+    border: 1px solid #DDD;
+    background: #FFF;
+    text-transform: uppercase;
+    color: #5f5f5f;
+    transition: 0.5s;
+}
+.team .item .btnCart button:hover{
+background:#fcb316 ;
+color:#FFF;
+border:1px solid #fcb316;
+}
+.team .item .btnCart button:focus{
+    outline: #fcb316;
+}
+.team .item .eyes{
+width:25%;
+font-size: 22px;
+}
+.team .item .cart{
+    width:50%;
+    font-weight: 500;
+    font-size: 15px;
+    box-shadow: 0 0 7px rgb(218, 218, 218);
+}
+.team .item .like{
+    width: 25%;
+    font-size: 22px;
+}
+.team p{
+        font-size: 18px;
+    margin-top: 5px;
+        margin-bottom: 0px;
+        text-align: left;
+    padding-left:10px ;
+}
+.team .price{
+    float: left;
+    padding-left: 10px;
+    color:#fcb316;
+    font-size: 18px;
+}
+
+.team .rate{
+    float: right;
+    padding-right: 10px;
+}
+
+.rating {
+    line-height: 1;
+}
+.fa-stack {
+    height: 12px;
+    line-height: 1;
+    width: 10px;
+    margin: 3px;
+}
+.fa.fa-star-o.fa-stack-1x, .fa.fa-star.fa-stack-x {
+    color: #b2b2b2;
+}
+.fa-stack-1x, .fa-stack-x {
+    font-size: 15px;
+}
+.fa.fa-star.fa-stack-1x {
+    color: #fcb316;
+}
+button:focus,input:focus,select:focus{
+    outline: 0;
+    box-shadow: none;
+}
+button,input,select{
+    outline: 0;
+    box-shadow: none;
+}
+
+.topbtn {
+    position: fixed;
+    bottom: 35px;
+    right: 35px;
+    font-size: 21px;
+    width: 45px;
+    height: 45px;
+    z-index: 999;
+    border-radius: 50%;
+    background:#fcb316;
+    border: none;
+    color: #FFF;
+    text-align: center;
+    cursor: pointer;
+    display: none;
+}
+.topbtn i{
+    line-height: 45px;
+}

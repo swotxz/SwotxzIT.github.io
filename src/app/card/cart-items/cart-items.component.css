@@ -1,0 +1,277 @@
+
+  .detalis .btn-del{
+    background-color: #d9534f;
+  }
+ 
+  .detalis .btn-del .round{
+    background-color: #ff9494;
+  }
+  .detalis input:focus,.detalis button:focus,.detalis select:focus{
+     box-shadow: none;
+     outline: 0;
+  }
+  .detalis input, .detalis select{
+    margin-bottom: -10px;
+  }
+  .detalis   button {
+    text-decoration: none;
+    -moz-border-radius: 30px;
+    -webkit-border-radius: 30px;
+    border-radius: 30px;
+    padding: 4px 37px 8px 10px;
+    color: #fff;
+    text-transform: uppercase;
+    font-family: sans-serif;
+    font-weight: bold;
+    position: relative;
+    transition: all 0.3s;
+    display: inline-block;
+    margin: 10px 3px 0 0;
+  }
+  .detalis  button span {
+    position: relative;
+    z-index: 3;
+  }
+  .detalis  button .round {
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    right: 3px;
+    top: 4px;
+    -moz-transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
+    -webkit-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
+    z-index: 2;
+  }
+  .detalis   button .round i {
+    position: absolute;
+    top: 50%;
+    margin-top: -9px;
+    left: 50%;
+    margin-left: -4px;
+    -moz-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+  }
+  
+  .detalis  .txt {
+    font-size: 13px;
+    line-height: 1.45;
+  }
+  
+
+  .detalis  .round {
+    background: transparent;
+  }
+  .detalis  button {
+    position: relative;
+    overflow: hidden;
+  } 
+  .detalis  a:focus{
+      outline: none;
+  }
+  .detalis  button.btn-1:after {
+    background-color: #f3cd7b;
+  }
+  .detalis button.btn-del:after{
+    background-color: #ff9494;
+  }
+  .detalis   button:after {
+    content: "";
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    right: 4px;
+    top: 3px;
+    -moz-transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
+    -webkit-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
+  }
+  .detalis button:hover:after {
+    right: 100%;
+    width: 50%;
+  }
+   .detalis button:hover i {
+    margin-left: 4px;
+  }
+
+  .price{
+    color: #fcb316;
+    font-size: 18px;
+    display: block;
+    margin: 5px 0 0 0;
+    font-weight: 600;
+}
+
+.rate{
+    padding-right: 10px;
+    display: block;
+}
+
+.rating {
+    line-height: 1;
+}
+.fa-stack {
+    height: 12px;
+    line-height: 1;
+    width: 10px;
+    margin: 3px;
+}
+.fa.fa-star-o.fa-stack-1x, .fa.fa-star.fa-stack-x {
+    color: #b2b2b2;
+}
+.fa-stack-1x, .fa-stack-x {
+    font-size: 15px;
+}
+.fa.fa-star.fa-stack-1x {
+    color: #fcb316;
+}
+
+
+ .under-items{
+  width: 100%;
+}
+ .shop-item .totalPrice{
+  font-weight: bold;
+}
+ .shop-item .image{
+    width: 20%;
+    float: left;
+    margin-right: 10px;
+}
+ .shop-item{
+  width: 100%;
+}
+ .shop-item .image img{
+    width: 100%;
+   
+}
+ .shop-item .detalis{
+    width:30%;
+    float: left;
+}
+ .shop-item  .addCart{
+float: right;
+}
+
+ .shop-item  .addCart input{
+    width: 70px;
+    margin-bottom: 10px;
+    border:none;
+}
+ .shop-item  .addCart button{
+    border: 2px solid #fcb316;
+    background: #fcb316;
+    font-size: 16px;
+    font-weight: bolder;
+    width: 35px;
+    text-align: center;
+    color: #FFF;
+    transition: 0.3s;
+    margin-right: 15px;
+}
+ .shop-item  .addCart button:hover{
+  box-shadow: 1px 2px 9px 2px rgba(0,0,0,0.2);
+  -moz-box-shadow: 1px 2px 9px 2px rgba(0,0,0,0.2);
+}
+
+ .shop-item  .addCart button:focus{
+    outline: 0;
+    box-shadow: none;
+}
+
+ .shopCart{
+    margin: 50px auto;
+    padding: 10px;
+    width: 85%;
+    background: #f8f8f8;
+}
+ .shopCart p{
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 20px;
+}
+ .shopCart ul{
+  list-style: none;
+  padding: 0;
+}
+
+ .shopCart ul li{
+  
+  display: block;
+}
+
+ .shopCart ul li .summeryPrice{
+float: right;
+font-weight: 600;
+}
+ .shopCart .check-out{
+  width: 100%;
+  border: 1px solid #fcb316;
+  background: #fcb316;
+  color: #FFF;
+  text-transform: uppercase;
+  font-weight: 600;
+  padding: 5px;
+  transition: 0.3s;
+}
+ .shopCart .check-out:hover{
+  box-shadow: 1px 2px 9px 2px rgba(0,0,0,0.2);
+  -moz-box-shadow: 1px 2px 9px 2px rgba(0,0,0,0.2);
+}
+cart .shopCart button:focus{
+  outline: 0;
+  box-shadow: none;
+}
+ .clearAll button{
+  background: #d9534f;
+  border:1px solid #d9534f;
+  font-weight: 600;
+  color: #FFF;
+  padding: 8px 20px 8px 20px;
+  transition: 0.3s;
+}
+ .clearAll button:focus{
+  outline: 0;
+  box-shadow: none;
+}
+ .clearAll button:hover{
+  box-shadow: 1px 2px 9px 2px rgba(0,0,0,0.2);
+  -moz-box-shadow: 1px 2px 9px 2px rgba(0,0,0,0.2);
+}
+
+
+
+@media only screen and (max-width:400px){
+  .clearAll button{
+
+    padding: 4px 15px 4px 15px;
+
+  }
+  .shop-item  .addCart button{
+    font-size: 12px;
+    width: 25px;
+}
+
+.detalis   button {
+
+  padding: 9px 37px 6px 5px;
+}
+
+.detalis  .txt {
+  font-size: 12px;
+  line-height: 1.45;
+}
+
+
+
+}

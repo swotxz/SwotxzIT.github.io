@@ -1,0 +1,155 @@
+
+<div class="bgImage">
+    <div class="overlay">
+
+    </div>
+</div>
+
+<svg  class="curveDownColor" xmlns="http://www.w3.org/2000/svg" version="1.1"
+ width="100%" height="100" viewBox="0 0 100 100" preserveAspectRatio="none" 
+ style="transform: rotate(180deg); margin-top: -100px; fill: #fff;">
+    <path d="M0 0 C 40 100 80 10 100 0 Z"></path>
+</svg>
+
+
+
+<section class="ProductDetailID">
+    <div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-6 "  >
+           
+                <div class="row">
+
+                        <div class="images">
+                            <a [class.active]="!defImg" (click)="imgFunc(product.imageUrl)">
+                                <img  [src]="product.imageUrl"  alt=".." >
+                            </a>
+                            <a *ngIf="product.imageUrl1" (click)="imgFunc(product.imageUrl1)">
+                                <img  [src]="product.imageUrl1"  alt=".." >
+                            </a>
+                            <a *ngIf="product.imageUrl2" (click)="imgFunc(product.imageUrl2)">
+                                <img  [src]="product.imageUrl2"  alt=".." >
+                            </a>
+                            <a *ngIf="product.imageUrl3" (click)="imgFunc(product.imageUrl3)">
+                                <img  [src]="product.imageUrl3"  alt=".." >
+                            </a>
+                        </div>
+                      <div class="show-Images">
+                        <div *ngIf="!defImg"> <img  [src]="product.imageUrl"  alt=".." ></div>
+                        <div *ngIf="defImg" > <img  [src]="showImg"  alt=".." ></div>
+                    
+                      </div>
+                    
+                    </div>
+        
+        </div> 
+        <div class="col-sm-6">
+            <div class="title">
+                <h1>{{product.title}}</h1>
+         
+                <span class="rate" *ngIf="product.rate === 'star2'">
+                  <div class="rating">
+                            <span class="fa fa-stack">
+                          <i class="fa fa-star fa-stack-1x"></i>
+                          </span> 
+                          <span class="fa fa-stack">
+                          <i class="fa fa-star fa-stack-1x"></i>
+                          </span> 
+                          <span class="fa fa-stack">
+                              <i class="fa  fa-star-o fa-stack-1x"></i>
+                          </span> 
+                          <span class="fa fa-stack">
+                              <i class="fa  fa-star-o  fa-stack-1x"></i>
+                          </span>
+                          <span class="fa fa-stack">
+                                  <i class="fa fa-star-o fa-stack-1x"></i>
+                          </span> 
+                      </div>
+                
+                </span>
+                <span class="rate" *ngIf="product.rate === 'star3'">
+                  <div class="rating">
+                      <span class="fa fa-stack">
+                          <i class="fa fa-star fa-stack-1x"></i>
+                          </span> 
+                          <span class="fa fa-stack">
+                          <i class="fa fa-star fa-stack-1x"></i>
+                          </span> 
+                          <span class="fa fa-stack">
+                              <i class="fa fa-star fa-stack-1x"></i>
+                          </span> 
+                          <span class="fa fa-stack">
+                              <i class="fa fa-star-o fa-stack-1x"></i>
+                          </span>
+                          <span class="fa fa-stack">
+                                  <i class="fa fa-star-o fa-stack-1x"></i>
+                          </span> 
+                      </div>
+                
+                </span>
+                <span class="rate" *ngIf="product.rate === 'star4'">
+                  <div class="rating">
+                      <span class="fa fa-stack">
+                          <i class="fa fa-star fa-stack-1x"></i>
+                          </span> 
+                          <span class="fa fa-stack">
+                          <i class="fa fa-star fa-stack-1x"></i>
+                          </span> 
+                          <span class="fa fa-stack">
+                              <i class="fa fa-star fa-stack-1x"></i>
+                          </span> 
+                          <span class="fa fa-stack">
+                              <i class="fa fa-star fa-stack-1x"></i>
+                          </span>
+                          <span class="fa fa-stack">
+                                  <i class="fa fa-star-o fa-stack-1x"></i>
+                          </span> 
+                      </div>
+                
+                </span>
+                <span class="rate" *ngIf="product.rate === 'star5'">
+                  <div class="rating">
+                      <span class="fa fa-stack">
+                          <i class="fa fa-star fa-stack-1x"></i>
+                          </span> 
+                          <span class="fa fa-stack">
+                          <i class="fa fa-star fa-stack-1x"></i>
+                          </span> 
+                          <span class="fa fa-stack">
+                              <i class="fa fa-star fa-stack-1x"></i>
+                          </span> 
+                          <span class="fa fa-stack">
+                              <i class="fa fa-star fa-stack-1x"></i>
+                          </span>
+                          <span class="fa fa-stack">
+                                  <i class="fa fa-star fa-stack-1x"></i>
+                          </span> 
+                      </div>
+                
+                </span>
+                  
+                <p>{{product.price}} $</p>
+                <hr/>
+            </div>
+            <h3>Description : </h3>
+            <p class="desc">{{product.desc}}</p>
+
+            <div class="quantity">
+                <button type="button"   (click)="goBackProducts()"  class="btn btn-1">
+                    <span class="txt">Back Products</span>
+                    <span class="round"><i class="fa fa-chevron-right"></i></span>
+                </button>
+                <button type="button"   (click)="goBackHome()"  class="btn btn-1">
+                    <span class="txt">Back Home </span>
+                    <span class="round"><i class="fa fa-chevron-right"></i></span>
+                </button>
+            </div>
+        </div>
+    </div>           
+
+        </div>
+    <div>
+
+</div>
+</section>
+<app-footer></app-footer>

@@ -1,0 +1,98 @@
+
+<div class="bgImage">
+    <div class="overlay">
+
+    </div>
+</div>
+
+<svg  class="curveDownColor" xmlns="http://www.w3.org/2000/svg" version="1.1"
+ width="100%" height="100" viewBox="0 0 100 100" preserveAspectRatio="none" 
+ style="transform: rotate(180deg); margin-top: -100px; fill: #fff;">
+    <path d="M0 0 C 40 100 80 10 100 0 Z"></path>
+</svg>
+
+<section class="dash">
+    <div class="container">
+    <div class="row">
+        <div class="col-md-3 col-sm-12">
+            <div class="minSizwCat">
+                <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                    <a class="navbar-brand" >Filter Products</a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                      <span class="navbar-toggler-icon"></span>
+                    </button>
+                  
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                      <ul class="navbar-nav mr-auto">
+                        <li class="nav-item " style="text-align: left;">
+                            <a  routerLinkActive="active"  routerLink="/dashboard/new" class="list-group-item list-group-item-action">
+                                New Product
+                             </a>
+                        </li>
+                        <li class="nav-item " style="text-align: left;">
+                            <a  routerLinkActive="active"   routerLink="/dashboard/products" class="list-group-item list-group-item-action">
+                                Managed Products
+                               </a>
+                        </li>
+                        <li class="nav-item " style="text-align: left;">
+                            <a  routerLinkActive="active"   routerLink="/dashboard/users" class="list-group-item list-group-item-action">
+                                Admins & Users
+                            </a>
+                            
+                        </li>
+                        <li class="nav-item " style="text-align: left;">
+                            <a  routerLinkActive="active"   routerLink="/dashboard/orders" class="list-group-item list-group-item-action">
+                                Orders
+                            </a>
+                        </li>
+                        <li class="nav-item " style="text-align: left;">
+                            <a  routerLinkActive="active"   routerLink="/dashboard/contacts" class="list-group-item list-group-item-action">
+                                Contact Us
+                                 </a>
+                             
+                        </li>
+                        <li class="nav-item " style="text-align: left;">
+                            <a  routerLinkActive="active"   routerLink="/dashboard/add-admin" class="list-group-item list-group-item-action">
+                                Add Admin
+                             </a>
+                        </li>
+                   
+
+                      </ul>
+                    </div>
+                  </nav>
+            </div>
+
+
+
+            <div class="list-group category ">
+                <a  routerLinkActive="active"  routerLink="/dashboard/new" class="list-group-item list-group-item-action">
+                   New Product
+                </a>
+                <a  routerLinkActive="active"   routerLink="/dashboard/products" class="list-group-item list-group-item-action">
+                  Managed Products
+                 </a>
+                 <a  routerLinkActive="active"   routerLink="/dashboard/users" class="list-group-item list-group-item-action">
+                    Admins & Users
+                </a>
+                 <a  routerLinkActive="active"   routerLink="/dashboard/orders" class="list-group-item list-group-item-action">
+                    Orders
+                </a>
+                <a  routerLinkActive="active"   routerLink="/dashboard/contacts" class="list-group-item list-group-item-action">
+               Contact Us
+                </a>
+                <a  routerLinkActive="active"   routerLink="/dashboard/add-admin" class="list-group-item list-group-item-action">
+                   Add Admin
+                </a>
+            </div>
+        </div>
+        <div class="col-md-9 col-sm-12">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</div>
+</section>
+<div class="copyright">
+    <p>&copy; Copyright <strong>ONLINE SHOP</strong>. All Rights Reserved</p>
+    <p>Designed by <span>A.Nour</span></p>
+</div>
